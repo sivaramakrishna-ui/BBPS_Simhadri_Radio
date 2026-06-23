@@ -4,36 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School Radio - Live Online</title>
+    <!-- Tailwind CSS for sleek styling -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-900 text-white flex flex-col items-center justify-center min-h-screen font-sans p-4">
 
+    <!-- Radio Dashboard Card -->
     <div class="bg-gray-800 p-8 rounded-2xl shadow-2xl text-center max-w-sm w-full border border-gray-700">
         
+        <!-- Live Status Badge -->
         <div class="flex items-center justify-center gap-2 mb-6">
             <span class="h-3 w-3 rounded-full bg-red-500 animate-pulse"></span>
             <span class="text-xs font-bold tracking-widest text-red-500 uppercase">Live Broadcast Channel</span>
         </div>
 
+        <!-- Station Branding -->
         <div class="mb-6">
             <h1 class="text-3xl font-extrabold mb-2 tracking-tight">School Radio</h1>
             <p class="text-gray-400 text-sm">Welcome back! Turn up your volume and listen live.</p>
         </div>
 
-        <div class="bg-gray-900 p-4 rounded-xl border border-gray-700 overflow-hidden flex flex-col items-center justify-center min-h-[120px]">
+        <!-- Secure Player Container Platform -->
+        <div class="bg-gray-900 p-4 rounded-xl border border-gray-700 overflow-hidden min-h-[140px]">
             
+            <!-- CASTER.FM OFFICIAL WIDGET - LEAVE UNTOUCHED -->
             <div data-type="newStreamPlayer"
-                 data-publicToken="bc2d2bd0-8241-4b25-88f2-2eacb37b8f95"
-                 data-theme="light" 
-                 data-color="e81e4d"
-                 data-channelId="" 
-                 data-rendered="false"
-                 class="cstrEmbed w-full text-[10px] text-gray-600">
-                <a href="https://www.caster.fm">Shoutcast Hosting</a> 
-                <a href="https://www.caster.fm">Stream Hosting</a> 
-                <a href="https://www.caster.fm">Radio Server Hosting</a>
-            </div>
-            <script src="https://cdn.cloud.caster.fm//widgets/embed.js"></script>
+data-publicToken="bc2d2bd0-8241-4b25-88f2-2eacb37b8f95"
+data-theme="light" data-color="e81e4d"
+data-channelId="" data-rendered="false"
+class="cstrEmbed"><a
+href="https://www.caster.fm">Shoutcast Hosting</a> <a
+href="https://www.caster.fm">Stream Hosting</a> <a
+href="https://www.caster.fm">Radio Server
+Hosting</a></div><script
+src="https://cdn.cloud.caster.fm//widgets/embed.js"></script>
+            <!-- END OF CASTER.FM WIDGET -->
 
         </div>
 
@@ -43,6 +48,7 @@
 
     </div>
 
+    <!-- Simple Footer -->
     <p class="text-xs text-gray-600 mt-6">Secure Broadcaster Pipeline Network • Caster.fm</p>
 
 </body>
