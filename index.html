@@ -25,13 +25,20 @@
         </div>
 
         <!-- Secure Player Container Platform -->
-        <div class="bg-gray-900 p-4 rounded-xl border border-gray-700 min-h-[80px] flex items-center justify-center">
+        <div class="bg-white p-4 rounded-xl shadow-inner min-h-[140px] flex flex-col items-center justify-center">
             
-            <!-- Standard Audio Player Framework (Bypasses Caster Script Validation Completely) -->
-            <audio class="w-full" controls preload="none">
-                <source src="https://shaincast.caster.fm/shaincast/bc2d2bd0-8241-4b25-88f2-2eacb37b8f95/stream.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
+            <!-- CASTER.FM OFFICIAL WIDGET SNIPPET -->
+            <div data-type="newStreamPlayer"
+            data-publicToken="bc2d2bd0-8241-4b25-88f2-2eacb37b8f95"
+            data-theme="light" data-color="e81e4d"
+            data-channelId="" data-rendered="false"
+            class="cstrEmbed"><a
+            href="https://www.caster.fm">Shoutcast Hosting</a> <a
+            href="https://www.caster.fm">Stream Hosting</a> <a
+            href="https://www.caster.fm">Radio Server
+            Hosting</a></div><script
+            src="https://cdn.cloud.caster.fm//widgets/embed.js"></script>
+            <!-- END OF CASTER.FM WIDGET -->
 
         </div>
 
@@ -42,7 +49,7 @@
     </div>
 
     <!-- Simple Footer -->
-    <p class="text-xs text-gray-600 mt-6">Secure Broadcaster Pipeline Network</p>
+    <p class="text-xs text-gray-600 mt-6">Secure Broadcaster Pipeline Network • Caster.fm</p>
 
 </body>
 </html>
