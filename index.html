@@ -3,73 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School Radio - Live</title>
+    <title>School Radio - Live Online</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-900 text-white flex flex-col items-center justify-center min-h-screen font-sans p-4">
 
-    <!-- Radio Dashboard Card -->
     <div class="bg-gray-800 p-8 rounded-2xl shadow-2xl text-center max-w-sm w-full border border-gray-700">
         
-        <!-- Live Status Badge -->
         <div class="flex items-center justify-center gap-2 mb-6">
             <span class="h-3 w-3 rounded-full bg-red-500 animate-pulse"></span>
-            <span class="text-xs font-bold tracking-widest text-red-500 uppercase">Live from the Studio</span>
+            <span class="text-xs font-bold tracking-widest text-red-500 uppercase">Live Broadcast Channel</span>
         </div>
 
-        <!-- Station Branding -->
-        <div class="mb-8">
+        <div class="mb-6">
             <h1 class="text-3xl font-extrabold mb-2 tracking-tight">School Radio</h1>
-            <p class="text-gray-400 text-sm">Turn up your volume and listen to the live stream!</p>
+            <p class="text-gray-400 text-sm">Welcome back! Turn up your volume and listen live.</p>
         </div>
 
-        <!-- Direct Native Audio Stream Tag -->
-        <!-- PASTE YOUR COMBINED HOST + PORT + /;stream.mp3 URL HERE -->
-        <audio id="radioPlayer" src="https://cors-anywhere.herokuapp.com/ s1.free-shoutcast.com: 18106;stream.mp3" preload="none" crossorigin="anonymous"></audio>
+        <div class="bg-gray-900 p-4 rounded-xl border border-gray-700 overflow-hidden flex flex-col items-center justify-center min-h-[120px]">
+            
+            <div data-type="newStreamPlayer"
+                 data-publicToken="bc2d2bd0-8241-4b25-88f2-2eacb37b8f95"
+                 data-theme="light" 
+                 data-color="e81e4d"
+                 data-channelId="" 
+                 data-rendered="false"
+                 class="cstrEmbed w-full">
+                <a href="https://www.caster.fm" class="text-xs text-gray-600 block">Shoutcast Hosting</a>
+            </div>
+            <script src="https://cdn.cloud.caster.fm//widgets/embed.js"></script>
 
-        <!-- Custom Play/Pause Button -->
-        <button id="playBtn" class="w-full bg-indigo-600 hover:bg-indigo-500 active:scale-95 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-2">
-            <span id="buttonIcon">▶</span>
-            <span id="buttonText">Listen Live</span>
-        </button>
+        </div>
+
+        <p class="text-[11px] text-gray-500 mt-4 leading-relaxed">
+            Use the player controls above to stream the broadcast.
+        </p>
 
     </div>
 
-    <!-- Clear Technical Troubleshooting Note -->
-    <p class="text-[10px] text-gray-600 mt-6 max-w-xs text-center">Note: Because free streams use HTTP, click the lock icon in your browser address bar and set "Insecure content" to Allow if audio does not start.</p>
+    <p class="text-xs text-gray-600 mt-6">Secure Broadcaster Pipeline Network • Caster.fm</p>
 
-    <script>
-        const player = document.getElementById('radioPlayer');
-        const playBtn = document.getElementById('playBtn');
-        const buttonIcon = document.getElementById('buttonIcon');
-        const buttonText = document.getElementById('buttonText');
-        let isPlaying = false;
-
-        playBtn.addEventListener('click', () => {
-            if (!isPlaying) {
-                player.load(); // Pulls the fresh live feed instantly
-                
-                player.play()
-                    .then(() => {
-                        isPlaying = true;
-                        buttonIcon.innerText = "⏸";
-                        buttonText.innerText = "Pause Station";
-                        playBtn.classList.remove('bg-indigo-600', 'hover:bg-indigo-500', 'shadow-indigo-600/30');
-                        playBtn.classList.add('bg-gray-700', 'hover:bg-gray-600', 'shadow-none');
-                    })
-                    .catch(err => {
-                        console.error("Playback block:", err);
-                        alert("The studio is currently offline, or your browser is blocking the unsecure HTTP audio link. \n\nFix: Click the lock icon next to your URL bar, open Site Settings, change 'Insecure Content' to ALLOW, and refresh!");
-                    });
-            } else {
-                player.pause();
-                isPlaying = false;
-                buttonIcon.innerText = "▶";
-                buttonText.innerText = "Listen Live";
-                playBtn.classList.remove('bg-gray-700', 'hover:bg-gray-600', 'shadow-none');
-                playBtn.classList.add('bg-indigo-600', 'hover:bg-indigo-500', 'shadow-indigo-600/30');
-            }
-        });
-    </script>
 </body>
 </html>
